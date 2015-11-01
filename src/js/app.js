@@ -15,7 +15,9 @@ angular.module('multiview', [
     .state('main', {
       url: "/",
       views: {
-        "state" : { templateUrl: "partials/main.html" }
+        'alpha' : { templateUrl: 'partials/alpha.html' },
+        'beta' : { templateUrl: 'partials/beta.html' },
+        'gamma' : { templateUrl: 'partials/gamma.html'}
       }
     });
 }])
