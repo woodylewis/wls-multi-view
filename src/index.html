@@ -17,7 +17,9 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="css/skeleton.css">
+  <!--
   <link rel="stylesheet" href="css/override.css">
+  -->
   <link rel="stylesheet" href="css/app.css">
   <link href="font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -34,14 +36,12 @@
         <header><div class="home-link" data-ng-click="goHome()">MultiView</div></header>
     </div>
   </div>
-  <div class="container">
-    <div class="row">
-      <div ng-controller="MainCtrl as ctl" ng-cloak>
-        <div class="twelve-columns">
-          <div ui-view="alpha"></div>
-          <div ui-view="beta"></div>
-          <div ui-view="gamma"></div>
-        </div>
+  <div ng-controller="MainCtrl as ctl" ng-cloak>
+    <div class="container">
+      <div class="row">
+          <div ui-view="alpha" class="four columns wls-cell"></div>
+          <div ui-view="beta" class="four columns wls-cell"></div>
+          <div ui-view="gamma" class="four columns wls-cell"></div>
       </div>
     </div>
   </div>
