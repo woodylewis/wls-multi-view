@@ -36,6 +36,8 @@ img {
 .wls-cell {
   height: 10em;
   border: 1px dotted #4173dd;
+  text-align: left;
+  padding: 1em;
 }
 .wls-row {
   border: 1px dotted green;

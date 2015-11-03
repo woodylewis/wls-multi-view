@@ -25,7 +25,10 @@ angular.module('multiview', [
   $state.go('main');
 }])
 .controller('appCtrl', ['$scope', '$state', function($scope, $state) {
-  $scope.goHome = function () {
+  var vm = this;
+
+  this.goHome = function() {
+    console.log('goHome');
     $state.go('main');
   };
 }]);
