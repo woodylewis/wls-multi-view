@@ -11,7 +11,8 @@ angular
 		},
 		controllerAs: "us",
 		bindToController: true,
-		controller: function() {
+		controller: function($scope) {
+			$scope.$emit('alphaEvent');
 			var vm = this;
 			vm.show = function() {
 				return vm.bundle.alpha === 'First' ? 'dog' : 'cat';
