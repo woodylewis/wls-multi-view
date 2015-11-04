@@ -5,7 +5,7 @@ angular
 .directive('wlsAlpha', function() {
 	return {
 		restrict: 'AE',
-		template: '<span><div ng-bind="us.bundle.alpha"></div><div ng-bind="us.show()"></div></span>',
+		template: '<span><div ng-bind="us.show()"></div></span>',
 		controllerAs: "us",
 		bindToController: true,
 		controller: function($scope) {
@@ -18,7 +18,8 @@ angular
 			};
 
 		  	$scope.$on('betaResponse', function(event, args) {
-				console.log('alpha handled betaResponse', args);
+				console.log(event);
+				vm.bundle.alpha = args.beta;
 		  	});
 		}
 	};

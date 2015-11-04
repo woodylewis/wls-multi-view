@@ -5,7 +5,7 @@ angular
 .directive('wlsBeta', function() {
 	return {
 		restrict: 'AE',
-		template: '<span><div ng-click="us.send()">send</div><div ng-bind="us.show()"></div></span>',
+		template: '<span><button ng-click="us.send()">send</button><div ng-bind="us.show()"></div></span>',
 		controllerAs: "us",
 		bindToController: true,
 		controller: function($scope) {
