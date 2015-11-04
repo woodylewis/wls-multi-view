@@ -6,17 +6,20 @@ angular
 	return {
 		restrict: 'AE',
 		template: '<span><div ng-bind="us.bundle.alpha"></div><div ng-bind="us.show()"></div></span>',
-		scope: {
-			bundle: '='
-		},
 		controllerAs: "us",
 		bindToController: true,
 		controller: function($scope) {
-			$scope.$emit('alphaEvent');
 			var vm = this;
+			vm.bundle = {};
+			vm.bundle.alpha = 'alpha';
+
 			vm.show = function() {
-				return vm.bundle.alpha === 'First' ? 'dog' : 'cat';
-			};	
+				return vm.bundle.alpha;
+			};
+
+		  	$scope.$on('betaResponse', function(event, args) {
+				console.log('alpha handled betaResponse', args);
+		  	});
 		}
 	};
 });

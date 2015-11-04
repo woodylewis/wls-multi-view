@@ -2,7 +2,9 @@
 
 angular.module('multiview', [
 	'ui.router',
-	'multiview.mainCtrl'
+  'multiview.eventBus',
+	'multiview.alpha',
+  'multiview.beta'
 ])
 .config(['$stateProvider', '$locationProvider', function($stateProvider, $locationProvider) {
   $locationProvider.html5Mode({
@@ -23,12 +25,4 @@ angular.module('multiview', [
 }])
 .run(['$state', function($state) {
   $state.go('main');
-}])
-.controller('appCtrl', ['$scope', '$state', function($scope, $state) {
-  var vm = this;
-
-  this.goHome = function() {
-    console.log('goHome');
-    $state.go('main');
-  };
 }]);
