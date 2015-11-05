@@ -11,26 +11,22 @@ angular
 		controller: function($scope) {
 			var vm = this;
 			vm.bundle = {};
-			vm.bundle.alpha = 'alpha';
-			vm.bundle.beta = 'beta';
+			vm.bundle.show = 'alpha';
 
 			vm.show = function() {
-				return vm.bundle.alpha;
+				return vm.bundle.show;
 			};
 
 			vm.send = function() {	
-				console.log('send function from alpha directive');
 				$scope.$emit('alphaEvent', vm.bundle);
 			};
 
 			$scope.$on('alphaResponse', function(event, args) {
-				console.log('ALPHA ALPHA');
-				vm.bundle.alpha = vm.bundle.alpha === 'beta' ? args.alpha : args.beta;
-				//vm.show();
+				vm.bundle.show = 'alpha';
 		  	});
 
 		  	$scope.$on('betaResponse', function(event, args) {
-				vm.bundle.alpha = args.beta;
+				vm.bundle.show = 'beta';
 		  	});
 		}
 	};
