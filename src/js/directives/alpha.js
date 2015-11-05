@@ -18,15 +18,16 @@ angular
 			};
 
 			vm.send = function() {	
+				vm.bundle.show = 'alpha';
 				$scope.$emit('alphaEvent', vm.bundle);
 			};
 
 			$scope.$on('alphaResponse', function(event, args) {
-				vm.bundle.show = 'alpha';
+				vm.bundle.show = args.show;
 		  	});
 
 		  	$scope.$on('betaResponse', function(event, args) {
-				vm.bundle.show = 'beta';
+				vm.bundle.show = args.show;
 		  	});
 		}
 	};
