@@ -4,7 +4,8 @@ angular.module('multiview', [
 	'ui.router',
   'multiview.eventBus',
 	'multiview.alpha',
-  'multiview.beta'
+  'multiview.beta',
+  'multiview.gamma'
 ])
 .config(['$stateProvider', '$locationProvider', function($stateProvider, $locationProvider) {
   $locationProvider.html5Mode({

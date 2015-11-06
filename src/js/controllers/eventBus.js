@@ -5,11 +5,13 @@ angular
 .controller('EventBus', EventBus);
 
 function EventBus($scope) {
-  	$scope.$on('alphaEvent', function(event, args) {
-		$scope.$broadcast('alphaResponse', args);
-  	});
+  	$scope.$on('sendBundle', function(event, args) {
+  		var theType = args.type,
+  			theBundle = {};
+  			theBundle.one = args.bundle.one;
+  			theBundle.two = args.bundle.two;
+  			theBundle.three = args.bundle.three;
 
-  	$scope.$on('betaEvent', function(event, args) {
-		$scope.$broadcast('betaResponse', args);
+		$scope.$broadcast('beamBundle', theBundle);
   	});
 }

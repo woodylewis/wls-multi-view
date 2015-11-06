@@ -2,15 +2,15 @@
 
 
 angular
-.module('multiview.alpha', [])
-.directive('wlsAlpha', function() {
+.module('multiview.gamma', [])
+.directive('wlsGamma', function() {
 	return {
 		restrict: 'AE',
 		scope: {
 			type: '=',
 			bundle: '='
 		},
-		templateUrl: 'templates/alpha-tpl.html',
+		templateUrl: 'templates/gamma-tpl.html',
 		controllerAs: "us",
 		bindToController: true,
 		controller: function($scope, $document) {
@@ -19,7 +19,7 @@ angular
 				vm.bundle = {};
 
 			$document.ready(function() {
-				var thisDirective = $document.find('wls-alpha');
+				var thisDirective = $document.find('wls-gamma');
 					vm.type = thisDirective[0].attributes.type.value;
 					var theBundle = thisDirective[0].attributes.bundle.value,
 						bundleFields = theBundle.split('_');
