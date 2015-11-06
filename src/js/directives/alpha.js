@@ -17,7 +17,11 @@ angular
 			$document.ready(function() {
 				vm.doc = $document.find('wls-alpha');
 				vm.proxyBundle = vm.doc[0].attributes.bundle.value;
-				console.log(vm.proxyBundle);
+				vm.proxyValues = vm.proxyBundle.split('.');
+				vm.proxyValues
+				.map(function(value) {
+					console.log(value);
+				});
 			});
 
 			vm.bundle = {};
