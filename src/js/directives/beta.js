@@ -10,7 +10,7 @@ angular
 			type: '=',
 			bundle: '='
 		},
-		templateUrl: 'templates/beta-tpl.html',
+		templateUrl: 'templates/base-tpl.html',
 		controllerAs: "us",
 		bindToController: true,
 		link: function(scope, element, attr) {
@@ -52,6 +52,10 @@ angular
 
 			$scope.$on('beamBundle', function(event, args) {
 				vm.bundle = args;
+		  	});
+		  	
+		  	$scope.$on('reset', function(event, args) {
+				vm.bundle = vm.dataset;
 		  	});
 		}
 	};

@@ -1,6 +1,10 @@
+#home,
 .send,
 a {
   cursor: pointer;
+}
+#home {
+  color: #4173dd;
 }
 header {
   font-family: 'Noto Sans', sans-serif;

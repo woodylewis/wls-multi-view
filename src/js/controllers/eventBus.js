@@ -5,6 +5,12 @@ angular
 .controller('EventBus', EventBus);
 
 function EventBus($scope) {
+	var vm = this;
+
+	vm.reset = function() {
+		$scope.$broadcast('reset');
+	};
+
   	$scope.$on('sendBundle', function(event, args) {
   		var theType = args.type,
   			theBundle = {};

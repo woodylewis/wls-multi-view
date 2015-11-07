@@ -22,11 +22,11 @@
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]--> 
-  <div class="container">
+  <div class="container" ng-controller="EventBus as eb">
     <div class="row">
-        <header><a ui-sref="main">MultiView</a></header>
+        <header><div id="home" ng-click="eb.reset()">MultiView</div></header>
     </div>
-    <div class="row" ng-controller="EventBus as eb">
+    <div class="row">
       <div ui-view="alpha" class="four columns wls-cell"></div>
       <div ui-view="beta" class="four columns wls-cell"></div>
       <div ui-view="gamma" class="four columns wls-cell"></div>
