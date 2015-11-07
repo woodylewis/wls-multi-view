@@ -13,6 +13,17 @@ angular
 		templateUrl: 'templates/beta-tpl.html',
 		controllerAs: "us",
 		bindToController: true,
+		link: function(scope, element, attr) {
+			var fields = attr.bundle.split('_'),
+				fieldValues = [];
+			for(var i=0; i < fields.length; i++) {
+				var fieldElements = fields[i].split('.');
+				fieldValues.push(fieldElements[1]);
+			}
+			scope.us.bundle.one = fieldValues[0];
+			scope.us.bundle.two = fieldValues[1];
+			scope.us.bundle.three = fieldValues[2];
+		},
 		controller: function($scope, $document) {
 			var vm = this;
 				vm.dataset = {};
