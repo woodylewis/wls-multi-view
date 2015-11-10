@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('multiview', [
+  'ngMock',
 	'ui.router',
   'multiview.eventBus',
 	'multiview.alpha',

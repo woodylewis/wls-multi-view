@@ -5,7 +5,7 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: 'src',
+    basePath: '../src',
 
 
     // frameworks to use
@@ -15,9 +15,12 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        './src/**/*.js',
-        './src/js/*.js',
-        '/src/js/**/*.js'
+        '**/*.js',
+        'js/*.js',
+        'js/**/*.js',
+        'bower_components/angular/*.js',
+        'bower_components/angular-mocks/*.js',
+        '../node_modules/ng-annotate/*.js'
     ],
 
 
@@ -63,5 +66,5 @@ module.exports = function(config) {
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: false
-  })
-}
+  });
+};
