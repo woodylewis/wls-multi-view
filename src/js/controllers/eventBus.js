@@ -6,6 +6,7 @@ angular
 
 function EventBus($scope) {
 	var vm = this;
+  vm.foo = ({alpha:'one'});
 
 	vm.reset = function() {
 		$scope.$broadcast('reset');
