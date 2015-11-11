@@ -11,8 +11,6 @@ module.exports = function(config){
       'src/js/*.js',
       'src/js/**/*.js',
       'unit-tests/*.mocha.js',
-      'src/bower_components/angular-route/angular-route.js',
-      'src/bower_components/angular-mocks/angular-mocks.js'
     ],
 
     // list of files to exclude
