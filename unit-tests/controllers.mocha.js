@@ -11,6 +11,6 @@ describe('checking event bus', function() {
   }));
 
   it('should have a reset function', function(){
-    expect(ctrl.reset).toBeTruthy();
+    expect(typeof ctrl.reset).toEqual('function');
   });
 });

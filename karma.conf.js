@@ -5,11 +5,22 @@ module.exports = function(config){
 
     frameworks: ['jasmine', 'mocha'],
 
+    preprocessors: {
+      'src/templates/*.html' : ['ng-html2js']
+    },
+
+    ngHtml2JsPreprocessor: {
+      stripPrefix: 'src/',
+      moduleName: 'PreprocessedTemplates'
+    },
+
     files : [
+      'src/bower_components/jquery/dist/jquery.js',
       'src/bower_components/angular/angular.js',
       'src/bower_components/angular-mocks/angular-mocks.js',
       'src/js/*.js',
       'src/js/**/*.js',
+      'src/templates/*.html',
       'unit-tests/*.mocha.js',
     ],
 
@@ -37,13 +48,22 @@ module.exports = function(config){
             'karma-chrome-launcher',
             'karma-firefox-launcher',
             'karma-jasmine',
-            'karma-junit-reporter'
+            'karma-ng-html2js-preprocessor',
+            'karma-htmlfile-reporter',//,
+            //'karma-junit-reporter'
             ],
 
+    reporters: ['progress', 'html'],
+
+    htmlReporter: {
+      outputFile: 'src/units.html',
+      pageTitle: 'Unit Tests'
+    }
+    /*
     junitReporter : {
       outputFile: 'test_out/unit.xml',
       suite: 'unit'
     }
-
+    */
   });
 };

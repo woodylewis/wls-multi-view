@@ -18,6 +18,6 @@ function EventBus($scope) {
   			theBundle.two = args.bundle.two;
   			theBundle.three = args.bundle.three;
 
-		$scope.$broadcast('beamBundle', theBundle);
+		  $scope.$broadcast('beamBundle', theBundle);
   	});
 }
