@@ -3,12 +3,14 @@ module.exports = function(config){
 
     basePath : './',
 
-    frameworks: ['mocha'],
+    frameworks: ['jasmine', 'mocha'],
 
     files : [
       'src/bower_components/angular/angular.js',
-      'src/bower_components/angular-route/angular-route.js',
-      'src/bower_components/angular-mocks/angular-mocks.js'
+      'src/bower_components/angular-mocks/angular-mocks.js',
+      'src/js/*.js',
+      'src/js/**/*.js',
+      'unit-tests/*.mocha.js'
     ],
 
     // list of files to exclude
