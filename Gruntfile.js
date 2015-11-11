@@ -24,7 +24,8 @@ module.exports = function(grunt) {
                     'src/js/app.js',
                     'src/js/controllers/*.js',
                     'src/js/services/*.js',
-                    'src/js/directives/*.js']
+                    'src/js/directives/*.js',
+                    'unit/*.js']
         },
         less: {
             development: {
