@@ -54,8 +54,10 @@ angular
 				vm.bundle = args;
 		  	});
 
+			//-----THIS DOES NOT RESPOND TO INITIAL CONTROLLER BROADCAST
 		  	$scope.$on('reset', function(event, args) {
 				vm.bundle = vm.dataset;
+				console.log('alpha reset');
 		  	});
 		}
 	};
