@@ -1,4 +1,4 @@
-describe('Testing directives', function() {
+describe('Testing wls-alpha directive', function() {
 
 	var $rootScope, $compile, element, scope;
 
@@ -18,8 +18,7 @@ describe('Testing directives', function() {
 		});
 	});
 
-	it('Type should be rendered', function() {
- 		//expect(element[0].innerText).toEqual('alpha');
+	it('Type should equal "alpha"', function() {
  		expect(scope.type).toEqual('alpha');
 	});
 });

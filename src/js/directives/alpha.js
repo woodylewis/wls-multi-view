@@ -23,7 +23,6 @@ angular
 			scope.us.bundle.one = fieldValues[0];
 			scope.us.bundle.two = fieldValues[1];
 			scope.us.bundle.three = fieldValues[2];
-			console.log(element);
 		},
 		controller: function($scope, $document) {
 			var vm = this;
@@ -55,8 +54,10 @@ angular
 				vm.bundle = args;
 		  	});
 
+			//-----THIS DOES NOT RESPOND TO INITIAL CONTROLLER BROADCAST
 		  	$scope.$on('reset', function(event, args) {
 				vm.bundle = vm.dataset;
+				console.log('alpha reset');
 		  	});
 		}
 	};
