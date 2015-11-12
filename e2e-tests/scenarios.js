@@ -1,41 +1,42 @@
 'use strict';
 
-/* https://github.com/angular/protractor/blob/master/docs/toc.md */
+describe('wls-multi-views', function() {
 
-describe('my app', function() {
-
-
-  it('should automatically redirect to /view1 when location hash/fragment is empty', function() {
+  it('Should start on home page', function() {
     browser.get('index.html');
-    expect(browser.getLocationAbsUrl()).toMatch("/view1");
+    expect(browser.getLocationAbsUrl()).toMatch("/");
   });
 
+  var sendButtons;
 
-  describe('view1', function() {
-
-    beforeEach(function() {
-      browser.get('index.html#/view1');
-    });
-
-
-    it('should render view1 when user navigates to /view1', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 1/);
-    });
-
+  beforeEach(function() {
+    sendButtons = element.all(by.css('.send'));
   });
 
+  it('There should be three send buttons', function() {
+    expect(sendButtons.count()).toEqual(3);
+    console.log('3 BUTTONS');
+  });
 
-  describe('view2', function() {
-
-    beforeEach(function() {
-      browser.get('index.html#/view2');
-    });
-
-
-    it('should render view2 when user navigates to /view2', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 2/);
+  it('Click the third send button', function() {
+    var gamma = sendButtons.get(2)
+    gamma.click()
+    .then(function() {
+      var b1 = element.all(by.css('#b_one'));
+      //var b1 = element.all(by.binding('us.bundle.one')).get(0);
+      //expect(b1.getId()).toEqual('b_one');
+      expect(b1.count()).toEqual(3);
+      /*
+      var first = b1.get(0);
+      var theVal = first.getText();
+      console.log('VALUE ', theVal);
+      */
+      element
+      .all(by.id('alphaDiv'))
+      .getAttribute('bundle')
+      .then( function(data) {
+        console.log('BUNDLE ', data);
+      });
     });
 
   });
