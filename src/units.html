@@ -12,7 +12,7 @@
         <td colspan="3" title="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36">Browser: Chrome 46.0.2490 (Mac OS X 10.10.5)</td>
       </tr>
       <tr class="overview">
-        <td colspan="3">Timestamp: Thu Nov 12 2015 12:17:15 GMT-0500 (EST)</td>
+        <td colspan="3">Timestamp: Sun Nov 15 2015 14:53:08 GMT-0500 (EST)</td>
       </tr>
       <tr>
         <td colspan="3">
@@ -34,14 +34,26 @@
         <td>Testing event bus &raquo; Testing reset function</td>
       </tr>
       <tr class="pass">
-        <td>Passed in 0.013s</td>
+        <td>Passed in 0.011s</td>
         <td>Should broadcast reset event</td>
         <td>Testing event bus &raquo; Testing broadcast of reset</td>
       </tr>
       <tr class="pass">
-        <td>Passed in 0.057s</td>
+        <td>Passed in 0.059s</td>
         <td>Type should equal "alpha"</td>
         <td>Testing wls-alpha directive</td>
+      </tr>
+      <tr class="system-out">
+        <td colspan="3"><strong>System output:</strong><br />Chrome 46.0.2490 (Mac OS X 10.10.5) LOG: Object{$attr: Object{type: 'type', bundle: 'bundle'}, $$element: {0: <wls-alpha type="alpha" bundle="one.alphaOne_two.alphaTwo_three.alphaThree" class="ng-scope ng-isolate-scope"><div class="send" ng-click="us.send()">send</div>
+
+<div id="b_one" ng-bind="us.bundle.one" class="ng-binding"></div>
+<div id="b_two" ng-bind="us.bundle.two" class="ng-binding"></div>
+<div id="b_three" ng-bind="us.bundle.three" class="ng-binding"></div></wls-alpha>, context: <wls-alpha type="alpha" bundle="one.alphaOne_two.alphaTwo_three.alphaThree" class="ng-scope ng-isolate-scope"><div class="send" ng-click="us.send()">send</div>
+
+<div id="b_one" ng-bind="us.bundle.one" class="ng-binding"></div>
+<div id="b_two" ng-bind="us.bundle.two" class="ng-binding"></div>
+<div id="b_three" ng-bind="us.bundle.three" class="ng-binding"></div></wls-alpha>, length: 1}, type: 'alpha', bundle: 'one.alphaOne_two.alphaTwo_three.alphaThree'}
+</td>
       </tr>
     </table>
     <hr/>
