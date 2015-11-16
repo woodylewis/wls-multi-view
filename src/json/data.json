@@ -1,0 +1,20 @@
+{
+	"alpha" :
+	{
+		"one" : "alphaOne",
+		"two" : "alphaTwo",
+		"three" : "alphaThree"
+	},
+	"beta" :
+	{
+		"one" : "betaOne",
+		"two" : "betaTwo",
+		"three" : "betaThree"
+	},
+	"gamma" :
+	{
+		"one" : "gammaOne",
+		"two" : "gammaTwo",
+		"three" : "gammaThree"
+	}
+}
