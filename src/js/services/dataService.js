@@ -1,5 +1,5 @@
-angular.module('multiview.alphaService', [])
-.factory('alphaService', ['$q', '$http', function($q, $http) {
+angular.module('multiview.dataservice', [])
+.factory('dataService', ['$q', '$http', function($q, $http) {
 	var  initUrl = 'json/data.json';
 
 	var initialize = function() {

@@ -2,8 +2,8 @@
 
 
 angular
-.module('multiview.alpha', ['multiview.alphaService'])
-.directive('wlsAlpha', ['alphaService', function(alphaService) {
+.module('multiview.alpha', ['multiview.dataservice'])
+.directive('wlsAlpha', ['dataService', function(dataService) {
 	return {
 		restrict: 'AE',
 		scope: {},
@@ -11,11 +11,9 @@ angular
 		controllerAs: "us",
 		bindToController: true,
 		link: function(scope, element, attr) {
-			var result = alphaService.initialize()
+			var result = dataService.initialize()
 			.then(function(result) {
-				scope.us.bundle.one = result.alpha.one;
-				scope.us.bundle.two = result.alpha.two;
-				scope.us.bundle.three = result.alpha.three;
+				scope.us.init(result);
 			});
 		},
 		controller: function($scope, $document) {
@@ -25,19 +23,22 @@ angular
 
 			vm.send = function() {	
 				var payload = {};
-				payload.type = vm.type;
 				payload.bundle = vm.dataset;
 				$scope.$emit('sendBundle', payload);
+			};
+
+			vm.init = function(data) {
+				vm.bundle.one = vm.dataset.one = data.alpha.one;
+				vm.bundle.two = vm.dataset.two = data.alpha.two;
+				vm.bundle.three = vm.dataset.three = data.alpha.three;
 			};
 
 			$scope.$on('beamBundle', function(event, args) {
 				vm.bundle = args;
 		  	});
 
-			//-----THIS DOES NOT RESPOND TO INITIAL CONTROLLER BROADCAST
 		  	$scope.$on('reset', function(event, args) {
 				vm.bundle = vm.dataset;
-				console.log('alpha reset');
 		  	});
 		}
 	};
