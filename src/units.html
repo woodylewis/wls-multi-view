@@ -12,15 +12,15 @@
         <td colspan="3" title="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36">Browser: Chrome 46.0.2490 (Mac OS X 10.10.5)</td>
       </tr>
       <tr class="overview">
-        <td colspan="3">Timestamp: Sun Nov 15 2015 14:53:08 GMT-0500 (EST)</td>
+        <td colspan="3">Timestamp: Mon Nov 16 2015 14:26:13 GMT-0500 (EST)</td>
       </tr>
       <tr>
         <td colspan="3">
-          3 tests / 
+          4 tests / 
           0 errors / 
-          0 failures / 
+          2 failures / 
           0 skipped / 
-          runtime: 0.101s
+          runtime: 0.119s
         </td>
       </tr>
       <tr class="header">
@@ -29,7 +29,7 @@
         <td>Suite / Results</td>
       </tr>
       <tr class="pass">
-        <td>Passed in 0.031s</td>
+        <td>Passed in 0.034s</td>
         <td>Should have a reset function</td>
         <td>Testing event bus &raquo; Testing reset function</td>
       </tr>
@@ -38,22 +38,46 @@
         <td>Should broadcast reset event</td>
         <td>Testing event bus &raquo; Testing broadcast of reset</td>
       </tr>
-      <tr class="pass">
-        <td>Passed in 0.059s</td>
-        <td>Type should equal "alpha"</td>
-        <td>Testing wls-alpha directive</td>
+      <tr class="fail">
+        <td>Failed</td>
+        <td>First field should equal "alphaOne"</td>
+        <td>
+          Testing wls-alpha directive
+          <br />Error: Unexpected request: GET json/data.json
+No more request expected
+    at $httpBackend (/Users/woody/wls-multi-view/src/bower_components/angular-mocks/angular-mocks.js:1244:9)
+    at sendReq (/Users/woody/wls-multi-view/src/bower_components/angular/angular.js:10515:9)
+    at serverRequest (/Users/woody/wls-multi-view/src/bower_components/angular/angular.js:10222:16)
+    at processQueue (/Users/woody/wls-multi-view/src/bower_components/angular/angular.js:14745:28)
+    at /Users/woody/wls-multi-view/src/bower_components/angular/angular.js:14761:27
+    at Scope.$eval (/Users/woody/wls-multi-view/src/bower_components/angular/angular.js:15989:28)
+    at Scope.$digest (/Users/woody/wls-multi-view/src/bower_components/angular/angular.js:15800:31)
+    at Scope.$apply (/Users/woody/wls-multi-view/src/bower_components/angular/angular.js:16097:24)
+    at Object.&lt;anonymous&gt; (/Users/woody/wls-multi-view/unit-tests/directives.mocha.js:14:10)
+    at Object.invoke (/Users/woody/wls-multi-view/src/bower_components/angular/angular.js:4478:17)
+Error: Declaration Location
+    at window.inject.angular.mock.inject (/Users/woody/wls-multi-view/src/bower_components/angular-mocks/angular-mocks.js:2409:25)
+    at Object.&lt;anonymous&gt; (/Users/woody/wls-multi-view/unit-tests/directives.mocha.js:8:3)
+
+        </td>
       </tr>
-      <tr class="system-out">
-        <td colspan="3"><strong>System output:</strong><br />Chrome 46.0.2490 (Mac OS X 10.10.5) LOG: Object{$attr: Object{type: 'type', bundle: 'bundle'}, $$element: {0: <wls-alpha type="alpha" bundle="one.alphaOne_two.alphaTwo_three.alphaThree" class="ng-scope ng-isolate-scope"><div class="send" ng-click="us.send()">send</div>
+      <tr class="fail">
+        <td>Failed</td>
+        <td>should do a successful get</td>
+        <td>
+          Testing dataService
+          <br />Error: Injector already created, can not register a module!
+    at workFn (/Users/woody/wls-multi-view/src/bower_components/angular-mocks/angular-mocks.js:2290:15)
+    at window.module.angular.mock.module (/Users/woody/wls-multi-view/src/bower_components/angular-mocks/angular-mocks.js:2286:30)
+    at Object.&lt;anonymous&gt; (/Users/woody/wls-multi-view/unit-tests/services.mocha.js:8:14)
+    at Object.invoke (/Users/woody/wls-multi-view/src/bower_components/angular/angular.js:4478:17)
+    at Object.workFn (/Users/woody/wls-multi-view/src/bower_components/angular-mocks/angular-mocks.js:2438:20)
+Error: Declaration Location
+    at window.inject.angular.mock.inject (/Users/woody/wls-multi-view/src/bower_components/angular-mocks/angular-mocks.js:2409:25)
+    at Suite.&lt;anonymous&gt; (/Users/woody/wls-multi-view/unit-tests/services.mocha.js:2:35)
+    at /Users/woody/wls-multi-view/unit-tests/services.mocha.js:1:1
 
-<div id="b_one" ng-bind="us.bundle.one" class="ng-binding"></div>
-<div id="b_two" ng-bind="us.bundle.two" class="ng-binding"></div>
-<div id="b_three" ng-bind="us.bundle.three" class="ng-binding"></div></wls-alpha>, context: <wls-alpha type="alpha" bundle="one.alphaOne_two.alphaTwo_three.alphaThree" class="ng-scope ng-isolate-scope"><div class="send" ng-click="us.send()">send</div>
-
-<div id="b_one" ng-bind="us.bundle.one" class="ng-binding"></div>
-<div id="b_two" ng-bind="us.bundle.two" class="ng-binding"></div>
-<div id="b_three" ng-bind="us.bundle.three" class="ng-binding"></div></wls-alpha>, length: 1}, type: 'alpha', bundle: 'one.alphaOne_two.alphaTwo_three.alphaThree'}
-</td>
+        </td>
       </tr>
     </table>
     <hr/>
