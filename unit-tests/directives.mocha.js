@@ -13,13 +13,13 @@ describe('Testing wls-alpha directive', function() {
 
 			scope.$apply(function() {
 				scope.bundle = {};
-				scope.bundle.one = "alphaOne";
 				$compile(element)(scope);
 			});
 		});
 	});
-
-	it('First field should equal "alphaOne"', function() {
- 		//expect(scope.bundle.one).toEqual('alphaOne');
+/*
+	it('Element test', function() {
+ 		expect(element).toContain('wls-alpha');
 	});
+*/
 });

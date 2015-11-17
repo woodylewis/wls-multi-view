@@ -11,10 +11,17 @@ angular
 		controllerAs: "us",
 		bindToController: true,
 		link: function(scope, element, attr) {
-			var result = dataService.initialize()
-			.then(function(result) {
-				scope.us.init(result);
-			});
+				var ds = dataService.dataSet();
+				if(!ds.hasOwnProperty('beta')) {
+					console.log('EMPTY BETA');
+					dataService.initialize()
+					.then(function(data){
+						scope.us.init(data);
+					});
+				}
+				else {
+					scope.us.init(ds);
+				}
 		},
 		controller: function($scope, $document) {
 			var vm = this;
