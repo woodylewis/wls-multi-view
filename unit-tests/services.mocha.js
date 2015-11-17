@@ -18,7 +18,7 @@ describe('Testing dataService', function() {
 			$httpBackend
 			.when('GET', initUrl)
 			.respond(200, {foo: 'bar'});
-			console.log(service);	
+			//console.log(service);	
 			//$httpBackend.flush();
 		});
 });

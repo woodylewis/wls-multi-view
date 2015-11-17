@@ -20,6 +20,7 @@ angular
 					});
 				}
 				else {
+					console.log('INITIALIZED ALPHA');
 					scope.us.init(ds);
 				}
 		},
@@ -40,13 +41,16 @@ angular
 				vm.bundle.three = vm.dataset.three = data.alpha.three;
 			};
 
-			$scope.$on('beamBundle', function(event, args) {
+			var listener1 = $scope.$on('beamBundle', function(event, args) {
 				vm.bundle = args;
 		  	});
 
-		  	$scope.$on('reset', function(event, args) {
+		  	var listener2 = $scope.$on('reset', function(event, args) {
 				vm.bundle = vm.dataset;
 		  	});
+
+		  	$scope.$on('destroy', listener1);
+		  	$scope.$on('destroy', listener2);
 		}
 	};
 }]);
