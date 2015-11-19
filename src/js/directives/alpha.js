@@ -1,5 +1,5 @@
 'use strict';
-
+ 
 
 angular
 .module('multiview.alpha', ['multiview.dataservice'])
@@ -24,7 +24,7 @@ angular
 					scope.us.init(ds);
 				}
 		},
-		controller: function($scope, $document) {
+		controller: function($scope) {
 			var vm = this;
 				vm.dataset = {};
 				vm.bundle = {};
