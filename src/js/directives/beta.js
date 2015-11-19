@@ -20,7 +20,7 @@ angular
 					});
 				}
 				else {
-					console.log('INITIALIZED GAMMA');
+					console.log('INITIALIZED BETA');
 					scope.us.init(ds);
 				}
 		},

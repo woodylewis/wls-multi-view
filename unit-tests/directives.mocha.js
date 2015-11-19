@@ -1,25 +1,25 @@
 describe('Testing wls-alpha directive', function() {
 
-	var $rootScope, $compile, element, scope;
+	beforeEach(angular.mock.module("multiview.alpha"));
 
-	beforeEach(function() {
-		module('multiview.alpha');
-		module('PreprocessedTemplates');
-		inject(function($injector) {
-			$rootScope = $injector.get('$rootScope');
-			$compile = $injector.get('$compile');
-			element = angular.element('<wls-alpha></wls-alpha>');
-			scope = $rootScope.$new();
+	describe("template", function() {
+		var $compile, $scope, $httpBackend;
 
-			scope.$apply(function() {
-				scope.bundle = {};
-				$compile(element)(scope);
-			});
-		});
+		beforeEach(module('PreprocessedTemplates'));
+
+		beforeEach(inject(function(_$compile_, _$rootScope_, _$httpBackend_) {
+				$httpBackend = _$httpBackend_;
+				$compile = _$compile_;
+				$scope = _$rootScope_.$new();
+		}));
+
+		it('should render as passed in by $scope', 
+		inject(function() {
+				$httpBackend.whenGET('json/data.json').respond("");
+				var template = $compile('<wls-alpha></wls-alpha>')($scope);
+				$scope.$digest();
+				var templateAsHtml = template.html();
+				expect(templateAsHtml).toContain('us.bundle.one');
+		}));
 	});
-/*
-	it('Element test', function() {
- 		expect(element).toContain('wls-alpha');
-	});
-*/
 });
